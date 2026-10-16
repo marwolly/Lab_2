@@ -1,0 +1,105 @@
+'use strict';
+// 1
+let myName = 'Артем';
+ 
+// 2
+const birthYear = 2009;
+ 
+// 3
+function greet(name) {
+  console.log('Привіт, ' + name + '!');
+}
+greet(myName);
+ 
+ 
+// 4
+function range(start, end) {
+  const result = [];
+  for (let i = start; i <= end; i++) {
+    result.push(i);
+  }
+  return result;
+}
+console.log(range(15, 30));
+ 
+// 5
+function rangeOdd(start, end) {
+  const result = [];
+  for (let i = start; i <= end; i++) {
+    if (i % 2 !== 0) {
+      result.push(i);
+    }
+  }
+  return result;
+}
+console.log(rangeOdd(15, 30));
+ 
+// 6
+function average(a, b) {
+  return (a + b) / 2;
+}
+ 
+function square(x) {
+  return x * x;
+}
+ 
+function cube(x) {
+  return x * x * x;
+}
+ 
+function calculate() {
+  const result = [];
+  for (let i = 0; i <= 9; i++) {
+    result.push(average(square(i), cube(i)));
+  }
+  return result;
+}
+console.log(calculate());
+ 
+// 7
+function fn() {
+  const obj1 = { name: 'Марк' }; 
+  let obj2 = { name: 'Марк' }; 
+ 
+  obj1.name = 'Нове ім\'я';
+  obj2.name = 'Нове ім\'я';
+ 
+  obj2 = { name: 'Інший об\'єкт' };
+
+  console.log(obj1, obj2);
+}
+fn();
+ 
+// 8
+function createUser(name, city) {
+  return { name: name, city: city };
+}
+console.log(createUser('Marcus Aurelius', 'Roma'));
+ 
+// 9
+const phoneBook = [
+  { name: 'Marcus', phone: '+380445554433' },
+  { name: 'Eva', phone: '+380445554434' },
+  { name: 'Nastya', phone: '+380445554435' },
+];
+ 
+function findPhoneByName(name) {
+  for (let i = 0; i < phoneBook.length; i++) {
+    if (phoneBook[i].name === name) {
+      return phoneBook[i].phone;
+    }
+  }
+}
+console.log(findPhoneByName('Julius Caesar'));
+ 
+// 10
+const hash = {
+  'Marcus': '+380445554433',
+  'Eva': '+380445554434',
+  'Nastya': '+380445554435',
+};
+ 
+function findPhoneByNameHash(name) {
+  return hash[name];
+}
+console.log(findPhoneByNameHash('Nero'));
